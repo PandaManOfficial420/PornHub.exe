@@ -1,4 +1,4 @@
-Installation
+#Installation
 
 Download the PornHub.exe file from the Releases page
 
